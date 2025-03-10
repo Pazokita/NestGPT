@@ -2,9 +2,10 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GptModule } from './gpt/gpt.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [GptModule],
+  imports: [GptModule, ConfigModule.forRoot(),],
   controllers: [AppController],
   providers: [AppService],
 })
